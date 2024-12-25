@@ -1,0 +1,161 @@
+const BodyWeight = () => {
+  const { setCurrentPage, setBodyWeight } = useContext(CloudContext);
+
+  return (
+    <div className='flex flex-col'>
+      {/* <h1>Biometrics</h1> */}
+      <div className='relative flex items-center justify-center bg-white'>
+        {/* Text with Masked Pattern */}
+        <h1
+          className='font-medium tracking-[-2.5px] text-[90px]'
+          style={{
+            backgroundImage: `url(${bluePattern.src})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Biometrics.
+        </h1>
+      </div>
+
+      <div className='flex flex-col items-end'>
+        <p className='text-black text-center font-sans text-[48px] font-light leading-none tracking-[-2.5px] mb-[15px]'>
+          Whats your body-weight?{" "}
+        </p>
+
+        <Input
+          type='text'
+          placeholder='Enter your BW'
+          className='w-full bg-[#F2F2F2] placeholder:text-[#888] placeholder:tracking-tighter placeholder:font-light mb-[15px] border-[1px] border-[#DADADA]'
+          onChange={(e) => setBodyWeight(e.target.value)}
+        />
+
+        <Button
+          variant='next'
+          className='text-[18px] font-light tracking-tight'
+          size='next'
+          onClick={() => setCurrentPage(2)}
+        >
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+const Gender = () => {
+  const { setCurrentPage, setGender } = useContext(CloudContext);
+
+  return (
+    <div className='flex flex-col'>
+      {/* <h1>Biometrics</h1> */}
+      <div className='relative flex items-center justify-center bg-white'>
+        {/* Text with Masked Pattern */}
+        <h1
+          className='font-medium tracking-[-2.5px] text-[90px]'
+          style={{
+            backgroundImage: `url(${bluePattern.src})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            filter: "hue-rotate(40deg)",
+          }}
+        >
+          Biometrics.
+        </h1>
+      </div>
+
+      <div className='flex flex-col items-end'>
+        <p className='text-black text-center font-sans text-[48px] font-light leading-none tracking-[-2.5px] mb-[15px]'>
+          What sex was assigned to you at birth?{" "}
+        </p>
+
+        <div className='flex flex-row w-full justify-between items-center gap-[10px] mb-[15px]'>
+          <Button
+            variant='lightGrey'
+            size='lightGrey'
+            className='rounded-[20px] border-[1px] border-[#DADADA]'
+            onClick={(e) => setGender("Male")}
+          >
+            Male
+          </Button>
+          <Button
+            variant='lightGrey'
+            size='lightGrey'
+            className='rounded-[20px] border-[1px] border-[#DADADA]'
+            onClick={(e) => setGender("Female")}
+          >
+            Female
+          </Button>
+        </div>
+      </div>
+
+      <div className='flex flex-row items-center justify-end w-full'>
+        <Button
+          variant='next'
+          className='text-[18px] font-light tracking-tight'
+          size='next'
+          onClick={() => setCurrentPage(3)}
+        >
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+};
+
+const Age = () => {
+  const { setCurrentPage, setAge } = useContext(CloudContext);
+
+  return (
+    <div className='flex flex-col'>
+      {/* <h1>Biometrics</h1> */}
+      <div className='relative flex items-center justify-center bg-white'>
+        {/* Text with Masked Pattern */}
+        <h1
+          className='font-medium tracking-[-2.5px] text-[90px]'
+          style={{
+            backgroundImage: `url(${bluePattern.src})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundClip: "text",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            // filter: "hue-rotate(40deg)",
+          }}
+        >
+          Biometrics.
+        </h1>
+      </div>
+
+      <div className='flex flex-col items-center'>
+        <p className='text-black text-center font-sans text-[48px] font-light leading-none tracking-[-2.5px] mb-[15px]'>
+          Last one before we can <br /> chat! What's your age?
+        </p>
+
+        <Input
+          type='text'
+          placeholder='Enter your age'
+          className='w-full bg-[#F2F2F2] placeholder:text-[#888] mb-[15px] border-[1px] placeholder:tracking-tighter placeholder:font-light border-[#DADADA]'
+          onChange={(e) => setAge(e.target.value)}
+        />
+      </div>
+
+      <div className='w-full flex flex-row justify-end'>
+        <Button
+          variant='next'
+          className='text-[18px] font-light tracking-tight'
+          size='next'
+          onClick={() => setCurrentPage(4)}
+        >
+          Next
+        </Button>
+      </div>
+    </div>
+  );
+};
